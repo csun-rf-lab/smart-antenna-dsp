@@ -1,0 +1,12 @@
+
+
+Signal has been processed, would you like to process at another angle or do something else?
+
+	[1] Create another ARV
+	
+	[2] To test and process previously gathered USRP data
+
+	[3] To sample a live signal and process it on the spot
+
+	[0] Quit
+

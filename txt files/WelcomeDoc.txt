@@ -1,0 +1,11 @@
+Welcome to the California State University Northridge signal processing program!
+
+This program contains three primary funcitons:
+
+	[1] To create Array Response Vectors (ARVs) from previously gathered USRP Data
+	
+	[2] To test and process previously gathered USRP data
+
+	[3] To sample a live signal and process it on the spot
+
+

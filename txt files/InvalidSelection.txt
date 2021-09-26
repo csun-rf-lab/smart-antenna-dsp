@@ -1,0 +1,11 @@
+
+
+I'm sorry, that is not a valid selection, please type either 1, 2 or 3 for the following options:
+
+	[1] To create Array Response Vectors (ARVs) from previously gathered USRP Data
+	
+	[2] To test and process previously gathered USRP data
+
+	[3] To sample a live signal and process it on the spot
+
+Or select 0 to quit.

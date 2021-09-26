@@ -1,0 +1,8 @@
+
+
+You have selected test previously gathered USRP data.
+
+This function will calibrate signals at the angle specified, create a pseudospectrum
+of the angle of arrival, and create a beamforming graph. 
+
+PLEASE NOTE: You will need to choose an ARV File and a USRP Data set. In order to get accurate results, please ensure that the USRP data set is the one that the ARV was created from.

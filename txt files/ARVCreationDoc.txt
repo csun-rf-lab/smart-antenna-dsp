@@ -1,0 +1,10 @@
+
+
+You have selected ARV Creation.
+ 
+This function will create an Array Response Vector for a selected set of USRP Data.
+The ARV is necessary for the operation of the other functions of this program.
+When selecting files to use for the other functions, please ensure to select
+the ARV that goes with the USRP Data used to create said ARV.
+
+

@@ -1,0 +1,3 @@
+
+Some data sets were taken at different degree intervals.
+Please specify what degree interval was used for this test data: 
