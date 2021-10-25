@@ -1,0 +1,5 @@
+function [ARV, Cal] = createARV(data, interval)
+    addPath(data);
+    
+    ant0_0 = read_complex_binary("ArrayTest0_0");
+end
