@@ -63,7 +63,7 @@ ARV = ARV./max(max(abs(ARV)));
 date = datestr(now, 'mmmm-dd-yyyy');
 ArrayTest = extractAfter(DataFolder, "/Users/morris/Desktop/seniordesign/arv");
 FILENAME = "ARV_"+ArrayTest+"_Created:"+date+".mat";
-matfile = fullfile('/Users/morris/Desktop/seniordesign/arv', FILENAME);
+matfile = fullfile('ARVs', FILENAME);
 save(matfile, 'ARV');
 %need to export the ARV as a file to import later into the MUSIC function
 end

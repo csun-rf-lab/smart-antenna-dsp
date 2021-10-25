@@ -46,9 +46,10 @@ Ant3_broad = read_complex_binary(['ArrayTest3_0']);
                           % col => Data at the angle specified by the row
 broadside = round(row/2);
 
-Ant0_FFT = fft(Ant0_broad(broadside,:));
-[Ant0a,Ant0b] = max(abs(Ant0_FFT));
-Ant0_Phase = angle(Ant0_FFT(Ant0b));
+
+Ant0_FFT = fft(Ant0_broad(broadside,:)); %FFT of middle value
+[Ant0a,Ant0b] = max(abs(Ant0_FFT)); %[magnitude, index] of FFT maximum
+Ant0_Phase = angle(Ant0_FFT(Ant0b)); %angle of FFT maximum
 
 Ant11_FFT = fft(Ant1_broad(broadside,:));
 [Ant1a,Ant1b] = max(abs(Ant11_FFT));
@@ -62,9 +63,10 @@ Ant3_FFT = fft(Ant3_broad(broadside,:));
 [Ant3a,Ant3b] = max(abs(Ant3_FFT));
 Ant3_Phase = angle(Ant3_FFT(Ant3b));
 
-Ant01_broadside = Ant0_Phase - Ant1_Phase;
-Ant02_broadside = Ant0_Phase - Ant2_Phase;
-Ant03_broadside = Ant0_Phase - Ant3_Phase;
+
+Ant01_broadside = Ant0_Phase - Ant1_Phase; %Phase difference between Ant1 and Ant0 
+Ant02_broadside = Ant0_Phase - Ant2_Phase; %Phase difference between Ant2 and Ant0 
+Ant03_broadside = Ant0_Phase - Ant3_Phase; %Phase difference between Ant3 and Ant0 
 
 
 %Use FFT to derive the amplitude and phases of the signals
@@ -92,18 +94,18 @@ Ant1_cal = Ant1a*(Ant0a/Ant1a)*sin(2*pi*F*t-(Ant1_Phase+Ant01_broadside));
 Ant2_cal = Ant2a*(Ant0a/Ant2a)*sin(2*pi*F*t-(Ant2_Phase+Ant02_broadside));
 Ant3_cal = Ant3a*(Ant0a/Ant3a)*sin(2*pi*F*t-(Ant3_Phase+Ant03_broadside));
 
-%Uncomment this section if you need to confirm that your signals are being
-%properly calibrated
-% figure;
-% plot(t, Ant0_cal,'r', t, Ant1_cal, 'b', t, Ant2_cal, 'g', t, Ant3_cal, 'm');
-% title('Calibrated Signal using Function');
-% legend('ant 0', 'ant 1', 'ant 2', 'ant 3')
-% xlabel('Seconds (us)');
-% ylabel('Amplitude');
-% xlabel('Seconds')
-% ylabel('Amplitude')
-% xlim([0 100*dt])
-% ylim([-.1 .1]);
+% Uncomment this section if you need to confirm that your signals are being
+%  properly calibrated
+figure;
+plot(t, Ant0_cal,'r', t, Ant1_cal, 'b', t, Ant2_cal, 'g', t, Ant3_cal, 'm');
+title('Calibrated Signal using Function');
+legend('ant 0', 'ant 1', 'ant 2', 'ant 3')
+xlabel('Seconds (us)');
+ylabel('Amplitude');
+xlabel('Seconds')
+ylabel('Amplitude')
+xlim([0 100*dt])
+ylim([-.1 .1]);
 
 
 end
