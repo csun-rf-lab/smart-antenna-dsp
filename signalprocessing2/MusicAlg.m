@@ -13,14 +13,22 @@
 % Author: Mark McAllister 
 % Last Modified: March 3, 2021
 
-function [Angle] = MusicAlg(Ant0_cal, Ant1_cal, Ant2_cal, Ant3_cal, ARVFile)
+function [Angle] = MusicAlg(ARV)
+
+
+addpath(uigetdir('/data', 'Select a Live Test Data Set'));
+Ant0_cal = read_complex_binary("LiveArrayTest0_15");
+Ant1_cal = read_complex_binary("LiveArrayTest1_15");
+Ant2_cal = read_complex_binary("LiveArrayTest2_15");
+Ant3_cal = read_complex_binary("LiveArrayTest3_15");
+
 
 %i = DegreeInterval;
 
 % Imports the Array Response Vector which is created seperately using 
 % ARV_Creation.m. Must recreate is changes are made to the testing set up
 
-ARV = importdata(ARVFile);
+% ARV = importdata(ARVFile);
 
 i = 180/(length(ARV)-1);
 

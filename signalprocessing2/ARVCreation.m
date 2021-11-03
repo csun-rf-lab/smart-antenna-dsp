@@ -1,6 +1,7 @@
-function [] = ARVCreation(DataFolder,startAngDeg,stopAngDeg,degInt)
+function [] = ARVCreation(startAngDeg,stopAngDeg,degInt)
 
-addpath(DataFolder);
+DataFolder = addpath(uigetdir('/data', 'Select a Data Set'));
+
 
 angles = startAngDeg:degInt:stopAngDeg;
 
@@ -9,7 +10,7 @@ for k=1:length(angles)
     
     fprintf(['Processing ARV for ' num2str(angles(k)) char(176) '\n']);
     
-    file0 = "ArrayTest0_"+angles(k);
+    file0 = "LiveArrayTest0_"+angles(k);
     file1 = "ArrayTest1_"+angles(k);
     file2 = "ArrayTest2_"+angles(k);
     file3 = "ArrayTest3_"+angles(k);
@@ -59,8 +60,8 @@ ARV = ARV./max(max(abs(ARV)));
 %of creation"
 date = datestr(now, 'mmmm-dd-yyyy');
 ArrayTest = extractAfter(DataFolder, '/Users/seniordesign/Documents/MATLAB/SIGNAL_PROCESSING_PROGRAM/SIGNAL_PROCESSING_PROGRAM/USRP_DATA/');
-FILENAME = "ARV_"+ArrayTest+"_Created_"+date+".mat";
-matfile = fullfile('/Users/seniordesign/Documents/MATLAB/Signal_Processing_2', FILENAME);
+FILENAME = "ARV_Created_"+date+".mat";
+matfile = fullfile('C:\Users\Morris\Documents\Fall 21\ECE 492\smart-antenna-dsp\signalprocessing2\ARV', FILENAME);
 save(matfile, 'ARV');
 end
 
