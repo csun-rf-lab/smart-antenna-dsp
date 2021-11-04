@@ -1,7 +1,7 @@
-function [] = ARVCreation(DataFolder,startAngDeg,stopAngDeg,degInt)
+function [] = ARVCreation(startAngDeg,stopAngDeg,degInt)
 
-addpath(DataFolder);
-
+input('Please hit enter, then select your Data Set.');
+DataFolder = uigetdir('/Users/seniordesign/Documents/MATLAB/SIGNAL_PROCESSING_PROGRAM/SIGNAL_PROCESSING_PROGRAM/USRP_DATA/'); 
 angles = startAngDeg:degInt:stopAngDeg;
 
 ARV = [];
